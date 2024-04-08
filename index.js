@@ -10,10 +10,10 @@ let bankBranchInstance = null;
 //    - Return the `bankBranchInstance` whether it's newly created or existing.
 class BankBranch {
     constructor(branchInfo) {
-        if (!bankBranchInstance) {
-            this.branchInfo = branchInfo;
-            bankBranchInstance = this;
-        } return bankBranchInstance;
+      if (!bankBranchInstance) {
+        this.branchInfo = branchInfo;
+        bankBranchInstance = this;
+      } return bankBranchInstance;
     }
     // 4. Add methods to the `BankBranch` class for managing branch-related information.
     // For example, you can add a method like `getBranchInfo` to retrieve branch details.
@@ -27,10 +27,10 @@ class BankBranch {
 //    - Use the `getBranchInfo` method to retrieve branch information from the instances.
 //    - Verify that `branchA` and `branchB` are both referring to the same instance by comparing them using `===`.
 
-const branchA = new BankBranch("New Branch");
+const branchA = new BankBranch("New branch");
 console.log(branchA.getBranchInfo()); 
 
-const branchB = new BankBranch("Old Branch");
+const branchB = new BankBranch("Old branch");
 console.log(branchB.getBranchInfo());
 
 console.log(branchA === branchB);
