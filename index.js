@@ -10,8 +10,9 @@ let bankBranchInstance = null;
 //    - Return the `bankBranchInstance` whether it's newly created or existing.
 class BankBranch {
     constructor(branchInfo) {
-        if (bankBranchInstance == null) {
-            bankBranchInstance = this; 
+        if (!bankBranchInstance) {
+            this.branchInfo = branchInfo;
+            bankBranchInstance = this;
         } return bankBranchInstance;
     }
     // 4. Add methods to the `BankBranch` class for managing branch-related information.
@@ -21,13 +22,18 @@ class BankBranch {
         return this.branchInfo;
     }
 } 
-
-
-
 // 5. In the usage section:
 //    - Create instances of the `BankBranch` class, such as `branchA` and `branchB`, with different branch information.
 //    - Use the `getBranchInfo` method to retrieve branch information from the instances.
 //    - Verify that `branchA` and `branchB` are both referring to the same instance by comparing them using `===`.
+
+const branchA = new BankBranch("New Branch");
+console.log(branchA.getBranchInfo()); 
+
+const branchB = new BankBranch("Old Branch");
+console.log(branchB.getBranchInfo());
+
+console.log(branchA === branchB);
 
 // This pseudo-code provides a step-by-step explanation of how to implement the Singleton Pattern for managing a single instance of the `BankBranch` class throughout the application, ensuring that multiple instances refer to the same object.
 
